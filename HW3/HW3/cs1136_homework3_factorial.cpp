@@ -1,6 +1,6 @@
 // Calculate factorials up to 20!
 //
-// n! is 1 * 2 * 3 * ... * n-2 * n-1 * n
+// n! is 1  2  3  ...  n-2  n-1  n
 //
 // Allow n to be any number from 1 to 20. A value of 0 says to stop processing
 //
@@ -13,7 +13,7 @@ using namespace std;
 
 // function prototypes
 // read the number and validate it
-int getNumber();
+int getNumber(int userNumber);
 // calculate the factorial (up to 20)
 long long int calculateFactorial(int value);
 
@@ -23,6 +23,15 @@ long long int calculateFactorial(int value);
 // factorial if the user enters 0. 
 int main()
 {
+	unsigned long long int userNumber, result;
+
+	cout << "Enter a number from 0 to 20: ";
+	cin >> userNumber;
+
+	userNumber = getNumber(userNumber);
+	result = calculateFactorial(userNumber);
+
+	cout << userNumber << "! is " << result;
 	// PUT YOUR MAIN PROCESSING LOOP HERE
 	// Your processing logic will have a loop that allows you to enter
 	// numbers between 1 and 20 (inclusive). You will then calculate the
@@ -35,8 +44,15 @@ int main()
 }
 
 // get a number between 0 and 20 inclusive. 
-int getNumber()
+int getNumber(int userNumber)
 {
+	while (!(userNumber >= 0 || userNumber <= 20))
+	{
+		cout << "Error: please enter a number from 0 to 20";
+		cout << endl << "Enter a number from 0 to 20: ";
+		cin >> userNumber;
+	}
+	return userNumber;
 	// Ask for a read a number from 0 to 20 inclusive. 
 	// Validate the input number and ask for a new value until the use 
 	// enters a valid number in the range of 0 to 20 inclusive. 
@@ -44,12 +60,20 @@ int getNumber()
 }
 
 // calculate n! for the case where n is value. 
-long long int calculateFactorial(int value)
+long long int calculateFactorial(int userNumber)
 {
+	unsigned long long int result = 1;
+	result = userNumber;
+	for (int count = 0; count < userNumber; count++)
+	{
+		int userNumber1;
+
+		for (int count = 0; count <= 1; count++)
+		{
+			userNumber1 = userNumber - count;
+		}
+		result *= userNumber1;
+	}
+	return result;
 	// Calculate the factorial for the number passed to the function (parameter value).
 }
-
-//testing commenter 
-
-
-//iteration 2
