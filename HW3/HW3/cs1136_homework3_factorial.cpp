@@ -63,16 +63,10 @@ int getNumber(int userNumber)
 long long int calculateFactorial(int userNumber)
 {
 	unsigned long long int result = 1;
-	result = userNumber;
-	for (int count = 0; count < userNumber; count++)
+	for (int count = 1; count <= userNumber; count++)
 	{
-		int userNumber1;
-
-		for (int count = 0; count <= 1; count++)
-		{
-			userNumber1 = userNumber - count;
-		}
-		result *= userNumber1;
+		result *= userNumber;
+		userNumber--;
 	}
 	return result;
 	// Calculate the factorial for the number passed to the function (parameter value).
